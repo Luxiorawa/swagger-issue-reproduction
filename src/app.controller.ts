@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
-import { Foo } from './classes/foo.class';
+import { FooDto } from './dto/foo.dto';
 import { IBar } from './interfaces/bar.interface';
 import { FooWithoutId } from './types/foo-without-id.type';
 
@@ -15,9 +15,9 @@ export class AppController {
     return this.appService.stringReturn();
   }
 
-  @Get('/class-return')
-  classReturn(): Foo {
-    return this.appService.classReturn();
+  @Get('/dto-return')
+  dtoReturn(): FooDto {
+    return this.appService.dtoReturn();
   }
 
   @Get('/interface-return')

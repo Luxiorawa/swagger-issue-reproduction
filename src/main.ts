@@ -5,7 +5,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  const options = new DocumentBuilder();
+  const options = new DocumentBuilder().setTitle('Test');
 
   const document = SwaggerModule.createDocument(app, options.build(), {
     deepScanRoutes: true,
@@ -13,6 +13,7 @@ async function bootstrap() {
 
   SwaggerModule.setup('/docs', app, document, {
     explorer: false,
+    customSiteTitle: 'Test - Documentation',
   });
 
   await app.listen(3000);

@@ -1,4 +1,3 @@
-import { Foo } from './../classes/foo.class';
-import { OmitType } from '@nestjs/swagger';
+import { FooDto } from './../dto/foo.dto';
 
-export type FooWithoutId = OmitType(Foo, ['id']);
+export type FooWithoutId = Omit<FooDto, 'id'>;

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Foo } from './classes/foo.class';
+import { FooDto } from './dto/foo.dto';
 import { IBar } from './interfaces/bar.interface';
 import { FooWithoutId } from './types/foo-without-id.type';
 
@@ -9,7 +9,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  classReturn(): Foo {
+  dtoReturn(): FooDto {
     return {
       id: 1,
       first_name: 'John',
