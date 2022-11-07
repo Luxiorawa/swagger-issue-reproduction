@@ -14,7 +14,8 @@
             ".dto.ts",
             ".entity.ts",
             ".type.ts",
-            ".interface.ts"
+            ".interface.ts",
+            ".class.ts"
           ]
         }
       }
