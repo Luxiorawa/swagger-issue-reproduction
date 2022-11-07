@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiOkResponse } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { FooDto } from './dto/foo.dto';
 import { IBar } from './interfaces/bar.interface';
@@ -32,6 +32,7 @@ export class AppController {
     return this.appService.typeReturn();
   }
 
+  @ApiOkResponse({ type: AbstractFoo })
   @Get('/abstract-class-single-object-return')
   abstractClassSingleObjectReturn(): AbstractFoo {
     return this.appService.abstractClassSingleObjectReturn();
